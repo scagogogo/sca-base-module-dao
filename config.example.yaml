@@ -1,0 +1,30 @@
+# 日志相关参数配置
+logger:
+  auto-init: true
+  # 日志文件的输出目录
+  directory: "./logs"
+  # 日志开启哪些端
+  enable:
+    # 是否开启标准输出
+    stdout: true
+    # 是否开启文件输出
+    file: true
+
+# Redis配置
+redis:
+  address: "xxx:6379"
+  passwd: "xxxx:xxxx"
+
+# 数据库配置
+database:
+  mysql:
+    auto-init: true
+    dsn: "xxxx:xxxxxxxx@tcp(xxxx)/xxxx?parseTime=true&loc=Local&charset=utf8mb4"
+    # 使用到的驱动都有哪些
+    driver:
+      sqlx: true
+      gorm: true
+    connection:
+      max-idle: 10
+      max-open: 100
+      max-lifetime: 1000_000
