@@ -31,6 +31,7 @@ func InitGorm(config *sca_base_module_config.Configuration) error {
 	if err != nil {
 		return fmt.Errorf("failed to get sql db: %w", err)
 	}
+
 	// need same open connections and idle connections
 	// @see: https://github.com/go-sql-driver/mysql/issues/991#issuecomment-526035935
 	if config.Database.Mysql.Connection.MaxIdle != nil {
@@ -44,6 +45,9 @@ func InitGorm(config *sca_base_module_config.Configuration) error {
 	if config.Database.Mysql.Connection.MaxLifetime != nil {
 		sqlDB.SetConnMaxLifetime(*config.Database.Mysql.Connection.MaxLifetime)
 	}
+
+	// 关闭自动创建外键
+	db.Config.DisableForeignKeyConstraintWhenMigrating = true
 
 	Gorm = db
 	return nil
