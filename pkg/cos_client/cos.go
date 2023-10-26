@@ -72,11 +72,11 @@ func PutPublicObject(ctx context.Context,  c *cos.Client, bucketName, objectName
 	return PutObject(ctx, c, objectName, objectBytes, ObjectACLPublicRead)
 }
 
-// PutPrivateObjectToOss 把字节对象上传到oss，权限是私有读写
+// PutPrivateObject 把字节对象上传到oss，权限是私有读写
 // bucketName: 要上传到的bucket的名字
 // objectName: 对象的路径
 // objectBytes: 对象的数据
-func PutPrivateObjectToOss(ctx context.Context,  c *cos.Client, bucketName, objectName string, objectBytes []byte) error {
+func PutPrivateObject(ctx context.Context,  c *cos.Client, bucketName, objectName string, objectBytes []byte) error {
 	return PutObject(ctx, c, objectName, objectBytes, ObjectACLPrivate)
 }
 
