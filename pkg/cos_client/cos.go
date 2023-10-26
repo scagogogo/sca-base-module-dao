@@ -68,7 +68,7 @@ func New() (*cos.Client, error) {
 // bucketName: 要上传到的bucket的名字
 // objectName: 对象的路径
 // objectBytes: 对象的数据
-func PutPublicObject(ctx context.Context,  c *cos.Client, bucketName, objectName string, objectBytes []byte) error {
+func PutPublicObject(ctx context.Context,  c *cos.Client, objectName string, objectBytes []byte) error {
 	return PutObject(ctx, c, objectName, objectBytes, ObjectACLPublicRead)
 }
 
@@ -76,7 +76,7 @@ func PutPublicObject(ctx context.Context,  c *cos.Client, bucketName, objectName
 // bucketName: 要上传到的bucket的名字
 // objectName: 对象的路径
 // objectBytes: 对象的数据
-func PutPrivateObject(ctx context.Context,  c *cos.Client, bucketName, objectName string, objectBytes []byte) error {
+func PutPrivateObject(ctx context.Context,  c *cos.Client, objectName string, objectBytes []byte) error {
 	return PutObject(ctx, c, objectName, objectBytes, ObjectACLPrivate)
 }
 
