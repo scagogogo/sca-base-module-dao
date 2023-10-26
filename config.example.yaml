@@ -28,3 +28,19 @@ database:
       max-idle: 10
       max-open: 100
       max-lifetime: 1000_000
+
+# OSS相关参数配置
+oss:
+  # 公网
+  endpoint: "oss-cn-beijing.aliyuncs.com"
+  # 认证相关
+  access-key-id: "xxxx"
+  access-key-secret: "xxxx"
+
+# COS相关参数配置
+cos:
+  # 公网
+  endpoint: "https://<bucket>.cos.<region>.myqcloud.com"
+  # 认证相关
+  secret-id: "xxxx"
+  secret-key: "xxxx"
